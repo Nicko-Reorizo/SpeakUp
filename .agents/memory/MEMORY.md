@@ -1,0 +1,1 @@
+- [SpeakUp frontend workflow fix](speakup-workflow-fix.md) — artifact-managed `kind="web"` workflow always fails port probe; use a no-waitForPort console workflow instead.

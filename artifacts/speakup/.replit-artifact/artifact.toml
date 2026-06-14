@@ -1,0 +1,30 @@
+kind = "web"
+previewPath = "/"
+title = "SpeakUp"
+version = "1.0.0"
+id = "artifacts/speakup"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 8082
+
+[services.development]
+run = "pnpm --filter @workspace/speakup run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/speakup", "run", "build" ]
+publicDir = "artifacts/speakup/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "8083"
+BASE_PATH = "/"
