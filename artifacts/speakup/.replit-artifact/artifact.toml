@@ -11,7 +11,7 @@ version = "1.0.0"
 [[services]]
 name = "web"
 paths = [ "/" ]
-localPort = 8082
+localPort = 8083
 
 [services.development]
 run = "pnpm --filter @workspace/speakup run dev"
